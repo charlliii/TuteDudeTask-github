@@ -1,8 +1,13 @@
-# Task 1: Calculate Factorial Using a Function
-def fact(n):
-    if n < 2:
-        return 1
-    else:
-        return n * fact(n - 1)
-ans=fact(5)
-print(ans)
+#Task 1: Read a File and Handle Errors
+
+try:
+    with open('sample.txt','r') as f:
+        print("Reading file content: ")
+        lines=f.readlines()
+        count=1
+        for l in lines:
+            print(f"Line {count} : {l.strip()}")
+            count+=1
+except FileNotFoundError:
+    print("The file sample.txt not found")    
+
